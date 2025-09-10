@@ -12,4 +12,8 @@ public class ErpProjectVvsApplication {
 
 
 	
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
