@@ -41,11 +41,11 @@ Content-Type: application/json
     "message": "Product가 생성되었습니다.",
     "data": {
         "id": 1,
-        "title": "프로젝트 기획안 작성",
-        "description": "2024년 1분기 프로젝트 기획안 작성하기",
-        "dueDate": "2024-04-01T23:59:59Z",
-        "priority": "HIGH",
-        "status": "TODO",
+        "code": "프로젝트 기획안 작성",
+        "category": "2024년 1분기 프로젝트 기획안 작성하기",
+        "brand": "2024-04-01T23:59:59Z",
+        "price": "HIGH",
+        "description": "TODO",
         "assigneeId": 1,
         "assignee": {
             "id": 1,
@@ -59,4 +59,11 @@ Content-Type: application/json
     "timestamp": "2024-03-21T10:00:00Z"
 }
 
-2-
+2.2 product 조회
+
+Post/ api / post
+
+Authrization : Bearer{token}
+Content-Type : application/json
+
+
