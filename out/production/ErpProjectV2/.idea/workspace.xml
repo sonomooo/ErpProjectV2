@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39331cf2-e6cc-4640-99dd-5b4f8c3a07ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/ErpProjectVvsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/ErpProjectVvsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/common/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/common/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/common/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/common/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/common/exception/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/common/exception/GlobalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/common/exception/ProductErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/common/exception/ProductErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/common/response/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/common/response/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/dto/request/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/dto/request/ProductRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/dto/response/ProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/dto/response/ProductResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/exception/ProductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/exception/ProductException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/repository/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/repository/ProductRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/product/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/user/UserDto/UserDeleteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/user/UserDto/UserDeleteRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/user/UserDto/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/user/UserDto/UserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/user/UserDto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/user/UserDto/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/user/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/user/userRepository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/user/userRepository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpProjectVVS/src/java/realERPproject/erpProjectVVS/user/userService/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/user/userService/UserService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "sonomooo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sonomooo/ErpProjectV2.git",
+    "accountId": "e7fe9cce-b698-4a68-bf38-defdf8f9995e"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="32VtjMlupqH0E4OMVEG6lfbqcpU" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ErpProjectVvsApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Seokjin/ErpProjectV2/erpProjectVVS/src/main/java/realERPproject/erpProjectVVS/ErpProjectVvsApplication.java",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39331cf2-e6cc-4640-99dd-5b4f8c3a07ea" name="Changes" comment="" />
+      <created>1757517702190</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757517702190</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
