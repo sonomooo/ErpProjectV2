@@ -7,3 +7,63 @@ Erp project
 또한 git을 통한 협업에서 부족함을 느꼈기에 issue 생성과 pr, 병합을 원할하게 할 수 있는 능력을 목표로 합니다.
 
 
+api 명세서
+
+1. 공통 응답 형식
+   
+{
+    "success": true,           // boolean
+    "message": "성공 메시지",   // string
+    "data": {},               // 실제 데이터 (null 가능)
+    "timestamp": "2024-03-21T10:00:00Z"  // ISO 8601 형식
+}
+
+2. product Api
+
+2.1 product 생성
+
+POST / api / post
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "code":"pants-001",
+  "category":"pants",
+  "brand":"abc",
+  "price":"20000",
+  "description":"저렴한 가격의 훌륭한 퀄리티"
+}
+
+성공응답(201)
+
+{
+    "success": true,
+    "message": "Product가 생성되었습니다.",
+    "data": {
+        "id": 1,
+        "code": "프로젝트 기획안 작성",
+        "category": "2024년 1분기 프로젝트 기획안 작성하기",
+        "brand": "2024-04-01T23:59:59Z",
+        "price": "HIGH",
+        "description": "TODO",
+        "assigneeId": 1,
+        "assignee": {
+            "id": 1,
+            "username": "johndoe",
+            "name": "John Doe",
+            "email": "john@example.com"
+        },
+        "createdAt": "2024-03-21T10:00:00Z",
+        "updatedAt": "2024-03-21T10:00:00Z"
+    },
+    "timestamp": "2024-03-21T10:00:00Z"
+}
+
+2.2 product 조회
+
+Post/ api / post
+
+Authrization : Bearer{token}
+Content-Type : application/json
+
+
