@@ -26,7 +26,9 @@ public class OrderService {
 
     public OrderResponse createOrder(OrderRequest orderRequest){
 
-        orderRepository.save(orderRequest);
+        Order order = orderMapper.toEntity(orderRequest);
+
+        orderRepository.save(order                                                                                                  );
 
         return orderMapper.toResponse(orderRequest);
     }
