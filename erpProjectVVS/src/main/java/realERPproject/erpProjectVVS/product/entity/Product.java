@@ -15,6 +15,7 @@ public class Product extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private final String productName;
     private final String code;
     private final String category;
     private final String brand;
@@ -22,7 +23,8 @@ public class Product extends BaseEntity {
     private final String description;
 
     @Builder
-    public Product(String brand, String category, String code, String description, String price) {
+    public Product(String productName,String brand, String category, String code, String description, String price) {
+        this.productName = productName;
         this.brand = brand;
         this.category = category;
         this.code = code;
