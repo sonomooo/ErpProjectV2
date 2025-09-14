@@ -5,21 +5,19 @@ import lombok.Builder;
 @Builder
 public class ProductResponse {
 
+    private String productName;
     private String code;
     private String category;
     private String brand;
-    private String stockQuantity;
-    private String location;
     private String price;
     private String description;
 
-    public ProductResponse(String brand, String category, String code, String description, String location, String price, String stockQuantity) {
+    public ProductResponse(String brand, String category, String code, String description, String price, String productName) {
         this.brand = brand;
         this.category = category;
         this.code = code;
         this.description = description;
-        this.location = location;
         this.price = price;
-        this.stockQuantity = stockQuantity;
+        this.productName = productName;
     }
 }

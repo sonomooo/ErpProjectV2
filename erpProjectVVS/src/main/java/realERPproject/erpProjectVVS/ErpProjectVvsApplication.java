@@ -10,7 +10,4 @@ public class ErpProjectVvsApplication {
 		SpringApplication.run(ErpProjectVvsApplication.class, args);
 	}
 
-
-
-
 }

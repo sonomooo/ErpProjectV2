@@ -1,24 +1,23 @@
 package realERPproject.erpProjectVVS.user.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Builder;
+import jakarta.persistence.*;
 import lombok.Getter;
 import realERPproject.erpProjectVVS.user.UserDto.UserRequest;
 
 @Getter
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    Long Id;
+    private Long id;
 
-    String nickName;
-    String loginId;
-    String password;
-    String address;
+    private String nickName;
+    private String loginId;
+    private String password;
+    private String address;
+
+    protected User() {}  // 추가
 
     public User(String address, String loginId, String nickName, String password) {
 

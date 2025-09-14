@@ -1,7 +1,6 @@
 package realERPproject.erpProjectVVS.common.response;
 
 import lombok.Builder;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
