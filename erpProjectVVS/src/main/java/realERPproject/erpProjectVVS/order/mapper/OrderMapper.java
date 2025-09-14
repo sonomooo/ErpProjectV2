@@ -29,4 +29,14 @@ public class OrderMapper {
                         .assignee(order.getAssignee())
                         .build());
     }
+
+    public Order toEntity(OrderRequest orderRequest){
+
+        return Order.builder()
+                .user(orderRequest.getUser())
+                .orderNumber(orderRequest.getOrderNumber())
+                .orderStatus(orderRequest.getOrderStatus())
+                .assignee(orderRequest.getAssignee())
+                .build();
+    }
 }
