@@ -6,7 +6,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestParam;
+import realERPproject.erpProjectVVS.common.exception.GlobalException;
+import realERPproject.erpProjectVVS.common.exception.ProductErrorCode;
 import realERPproject.erpProjectVVS.common.response.ApiResponse;
 import realERPproject.erpProjectVVS.order.dto.OrderRequest;
 import realERPproject.erpProjectVVS.order.dto.OrderResponse;
@@ -14,6 +17,11 @@ import realERPproject.erpProjectVVS.order.dto.OrderSearchCondition;
 import realERPproject.erpProjectVVS.order.entity.Order;
 import realERPproject.erpProjectVVS.order.mapper.OrderMapper;
 import realERPproject.erpProjectVVS.order.repository.OrderRepository;
+import realERPproject.erpProjectVVS.product.entity.Product;
+import realERPproject.erpProjectVVS.product.exception.ProductException;
+import realERPproject.erpProjectVVS.product.repository.ProductRepositoryImpl;
+import realERPproject.erpProjectVVS.stock.entity.Stock;
+import realERPproject.erpProjectVVS.stock.stockRepository.StockRepositoryImpl;
 
 import java.awt.print.Pageable;
 
@@ -23,12 +31,21 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final OrderMapper orderMapper;
+    private final ProductRepositoryImpl productRepository;
+    private final StockRepositoryImpl stockRepository;
 
+    @Transactional
     public OrderResponse createOrder(OrderRequest orderRequest){
 
-        orderRepository.save(orderRequest);
+        Product product = productRepository.findById(orderRequest.getProductId())
+                .orElseThrow(() -> new GlobalException(ProductErrorCode.PRODUCT_NOT_FOUND));
+        Stock productQuantity = stockRepository.findQuantityById(product.getId());
 
-        return orderMapper.toResponse(orderRequest);
+        Order entity = Order.create(orderRequest, productQuantity);
+
+        orderRepository.save(entity);
+
+        return orderMapper.toResponse(entity);
     }
 
     public Page<OrderResponse> findListByOrderPage(String keyWord,
@@ -41,6 +58,5 @@ public class OrderService {
 
         return orderMapper.toResponsePage(byOrderNameContaining);
     }
-
 
 }

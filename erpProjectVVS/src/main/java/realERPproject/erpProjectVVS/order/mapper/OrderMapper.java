@@ -5,17 +5,17 @@ import org.springframework.stereotype.Component;
 import realERPproject.erpProjectVVS.order.dto.OrderRequest;
 import realERPproject.erpProjectVVS.order.dto.OrderResponse;
 import realERPproject.erpProjectVVS.order.entity.Order;
+import realERPproject.erpProjectVVS.order.entity.OrderStatus;
 
 @Component
 public class OrderMapper {
 
-    public OrderResponse toResponse(OrderRequest orderRequest){
+    public OrderResponse toResponse(Order order){
 
         return OrderResponse.builder()
-                .user_id(orderRequest.getUser_id())
-                .orderNumber(orderRequest.getOrderNumber())
-                .orderStatus(orderRequest.getOrderStatus())
-                .assignee(orderRequest.getAssignee())
+                .orderNumber(order.getOrderNumber())
+                .orderStatus(order.getOrderStatus())
+                .customer(order.getCustomer())
                 .build();
     }
 
@@ -23,10 +23,19 @@ public class OrderMapper {
 
         return orderPage.map(order ->
                 OrderResponse.builder()
-                        .user_id(order.getUser().getId())
                         .orderNumber(order.getOrderNumber())
                         .orderStatus(order.getOrderStatus())
-                        .assignee(order.getAssignee())
+                        .customer(order.getCustomer())
                         .build());
+    }
+
+    public Order toEntity(OrderRequest orderRequest){
+
+        return Order.builder()
+                .customer(orderRequest.getCustomer())
+                .orderNumber(orderRequest.getOrderNumber())
+                .orderStatus(OrderStatus.CREATED)
+                .productId(orderRequest.getProductId())
+                .build();
     }
 }

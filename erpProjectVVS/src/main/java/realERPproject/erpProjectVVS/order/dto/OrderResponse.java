@@ -7,9 +7,9 @@ import realERPproject.erpProjectVVS.user.entity.User;
 @Builder
 public class OrderResponse {
 
-    Long user_id;
     String orderNumber;
     OrderStatus orderStatus;
-    User assignee;
+    User customer;
+    int orderQuantity;
 
 }

@@ -9,7 +9,8 @@ public class OrderRequest {
 
     Long user_id;
     String orderNumber;
-    OrderStatus orderStatus;
-    User assignee;
+    User customer;
+    int orderQuantity;
+    Long productId;
 
 }
