@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: erpProjectV2
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/erp?serverTimezone=Asia/Seoul
+    username: root
+    password: "000620"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true

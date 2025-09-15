@@ -22,6 +22,7 @@ import realERPproject.erpProjectVVS.product.exception.ProductException;
 import realERPproject.erpProjectVVS.product.repository.ProductRepositoryImpl;
 import realERPproject.erpProjectVVS.stock.entity.Stock;
 import realERPproject.erpProjectVVS.stock.stockRepository.StockRepositoryImpl;
+import realERPproject.erpProjectVVS.wareHouse.domain.WareHouse;
 
 import java.awt.print.Pageable;
 
@@ -33,6 +34,7 @@ public class OrderService {
     private final OrderMapper orderMapper;
     private final ProductRepositoryImpl productRepository;
     private final StockRepositoryImpl stockRepository;
+    private final WareHouse wareHouse;
 
     @Transactional
     public OrderResponse createOrder(OrderRequest orderRequest){
@@ -42,6 +44,7 @@ public class OrderService {
         Stock productQuantity = stockRepository.findQuantityById(product.getId());
 
         Order entity = Order.create(orderRequest, productQuantity);
+        wareHouse.decreaseStock(product,orderRequest.getOrderQuantity());
 
         orderRepository.save(entity);
 
