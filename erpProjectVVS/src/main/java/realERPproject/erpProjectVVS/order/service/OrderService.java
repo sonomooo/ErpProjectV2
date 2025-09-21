@@ -1,30 +1,25 @@
 package realERPproject.erpProjectVVS.order.service;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestParam;
 import realERPproject.erpProjectVVS.common.exception.GlobalException;
 import realERPproject.erpProjectVVS.common.exception.ProductErrorCode;
-import realERPproject.erpProjectVVS.common.response.ApiResponse;
 import realERPproject.erpProjectVVS.order.dto.OrderRequest;
 import realERPproject.erpProjectVVS.order.dto.OrderResponse;
-import realERPproject.erpProjectVVS.order.dto.OrderSearchCondition;
 import realERPproject.erpProjectVVS.order.entity.Order;
 import realERPproject.erpProjectVVS.order.mapper.OrderMapper;
 import realERPproject.erpProjectVVS.order.repository.OrderRepository;
 import realERPproject.erpProjectVVS.product.entity.Product;
-import realERPproject.erpProjectVVS.product.exception.ProductException;
 import realERPproject.erpProjectVVS.product.repository.ProductRepositoryImpl;
 import realERPproject.erpProjectVVS.stock.entity.Stock;
 import realERPproject.erpProjectVVS.stock.stockRepository.StockRepositoryImpl;
 import realERPproject.erpProjectVVS.wareHouse.domain.WareHouse;
-
-import java.awt.print.Pageable;
+import realERPproject.erpProjectVVS.wareHouse.exception.WareHouseErrorCode;
+import realERPproject.erpProjectVVS.wareHouse.exception.WareHouseException;
+import realERPproject.erpProjectVVS.wareHouse.repository.WareHouseRepositoryImpl;
 
 @Service
 @RequiredArgsConstructor
@@ -34,7 +29,7 @@ public class OrderService {
     private final OrderMapper orderMapper;
     private final ProductRepositoryImpl productRepository;
     private final StockRepositoryImpl stockRepository;
-    private final WareHouse wareHouse;
+    private final WareHouseRepositoryImpl wareHouseRepository;
 
     @Transactional
     public OrderResponse createOrder(OrderRequest orderRequest){
@@ -42,6 +37,9 @@ public class OrderService {
         Product product = productRepository.findById(orderRequest.getProductId())
                 .orElseThrow(() -> new GlobalException(ProductErrorCode.PRODUCT_NOT_FOUND));
         Stock productQuantity = stockRepository.findQuantityById(product.getId());
+
+        WareHouse wareHouse = wareHouseRepository.findById(orderRequest.getProductId())
+                .orElseThrow(() -> new GlobalException(WareHouseErrorCode.WARE_HOUSE_ERROR_CODE));
 
         Order entity = Order.create(orderRequest, productQuantity);
         wareHouse.decreaseStock(product,orderRequest.getOrderQuantity());
@@ -57,7 +55,7 @@ public class OrderService {
     ){
         PageRequest pageRequest = PageRequest.of(page,size);
 
-        Page<Order> byOrderNameContaining = orderRepository.findByOrderByOrderId(keyWord,pageRequest);
+        Page<Order> byOrderNameContaining = orderRepository.findByOrderById(keyWord,pageRequest);
 
         return orderMapper.toResponsePage(byOrderNameContaining);
     }

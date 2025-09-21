@@ -3,7 +3,6 @@ package realERPproject.erpProjectVVS.stock.entity;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
 import realERPproject.erpProjectVVS.common.entity.BaseEntity;
 import realERPproject.erpProjectVVS.order.entity.Order;
 import realERPproject.erpProjectVVS.product.entity.Product;

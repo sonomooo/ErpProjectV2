@@ -1,9 +1,7 @@
 package realERPproject.erpProjectVVS.order.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 import realERPproject.erpProjectVVS.common.entity.BaseEntity;
 import realERPproject.erpProjectVVS.order.dto.OrderRequest;
 import realERPproject.erpProjectVVS.order.mapper.OrderMapper;

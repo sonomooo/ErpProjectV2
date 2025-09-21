@@ -7,11 +7,7 @@ import realERPproject.erpProjectVVS.user.entity.User;
 import java.util.Optional;
 
 @Repository
-public interface UserRepositoryImpl extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    User save(User user);
-
-    Optional<User> findById(Long Id);
-
-    User findByloginId(String loginId);
+    User findByLoginId(String loginId);
 }

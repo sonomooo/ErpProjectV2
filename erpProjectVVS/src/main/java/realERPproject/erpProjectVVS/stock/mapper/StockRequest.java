@@ -1,6 +1,5 @@
 package realERPproject.erpProjectVVS.stock.mapper;
 
-import lombok.Getter;
 import realERPproject.erpProjectVVS.order.entity.Order;
 import realERPproject.erpProjectVVS.product.entity.Product;
 import realERPproject.erpProjectVVS.user.entity.User;

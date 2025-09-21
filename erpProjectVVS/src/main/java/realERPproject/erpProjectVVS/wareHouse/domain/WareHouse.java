@@ -1,15 +1,13 @@
 package realERPproject.erpProjectVVS.wareHouse.domain;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import realERPproject.erpProjectVVS.product.entity.Product;
 import realERPproject.erpProjectVVS.stock.entity.Stock;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class WareHouse {
 
     @Id

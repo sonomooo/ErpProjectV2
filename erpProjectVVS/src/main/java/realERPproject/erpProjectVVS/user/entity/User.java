@@ -9,7 +9,7 @@ import realERPproject.erpProjectVVS.user.UserDto.UserRequest;
 @Table(name = "users")
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nickName;
@@ -28,8 +28,8 @@ public class User {
     }
 
     public void updateFrom(UserRequest req) {
-        this.nickName = req.getNickName();
-        this.password = req.getPassword();
-        this.address  = req.getAddress();
+        this.nickName = req.nickName();
+        this.password = req.password();
+        this.address  = req.address();
     }
 }

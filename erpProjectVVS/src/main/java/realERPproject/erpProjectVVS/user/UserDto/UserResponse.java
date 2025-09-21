@@ -1,5 +1,8 @@
 package realERPproject.erpProjectVVS.user.UserDto;
 
+import lombok.Getter;
+
+@Getter
 public class UserResponse {
 
     String nickName;

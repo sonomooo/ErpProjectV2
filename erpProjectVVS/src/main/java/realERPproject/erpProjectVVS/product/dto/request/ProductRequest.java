@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public class ProductRequest {
 
-    private String ProductName;
+    private String productName;
     private String code;
     private String category;
     private String brand;

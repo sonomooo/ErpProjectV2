@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import realERPproject.erpProjectVVS.user.UserDto.UserRequest;
 import realERPproject.erpProjectVVS.user.UserDto.UserResponse;
 import realERPproject.erpProjectVVS.user.entity.User;
-import realERPproject.erpProjectVVS.user.userRepository.UserRepositoryImpl;
+import realERPproject.erpProjectVVS.user.userRepository.UserRepository;
 
 import java.util.Optional;
 
@@ -15,17 +15,17 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    private final UserRepositoryImpl userRepositoryImpl;
+    private final UserRepository userRepository;
 
     public UserResponse singUp(UserRequest userRequest){
 
         User user = new User(
-                userRequest.getAddress(),
-                userRequest.getLoginId(),
-                userRequest.getNickName(),
-                userRequest.getPassword());
+                userRequest.nickName(),
+                userRequest.loginId(),
+                userRequest.password(),
+                userRequest.address());
 
-        User savedUser = userRepositoryImpl.save(user);
+        User savedUser = userRepository.save(user);
 
         return new UserResponse(
                 savedUser.getAddress(),
@@ -36,7 +36,7 @@ public class UserService {
 
     public UserResponse readUser(UserRequest userRequest){
 
-        User savedUser = userRepositoryImpl.findByloginId(userRequest.getLoginId());
+        User savedUser = userRepository.findByLoginId(userRequest.loginId());
 
         return new UserResponse(
                 savedUser.getAddress(),
@@ -48,17 +48,17 @@ public class UserService {
     public void DeleteUser(User user,
                            String password){
 
-        Optional<User> byId = userRepositoryImpl.findById(user.getId());
+        Optional<User> byId = userRepository.findById(user.getId());
 
         if (password.equals(user.getPassword())){
-            userRepositoryImpl.deleteById(user.getId());
+            userRepository.deleteById(user.getId());
         }
     }
 
     @Transactional
     public UserResponse UserUpdate(UserRequest userRequest) {
 
-        User user = userRepositoryImpl.findByloginId(userRequest.getLoginId());
+        User user = userRepository.findByLoginId(userRequest.loginId());
         user.updateFrom(userRequest);
 
         return new UserResponse(

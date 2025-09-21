@@ -15,5 +15,5 @@ public interface OrderRepository extends JpaRepository<Order,Long> {
 
     Page<Order> findAll(Pageable pageble);
 
-    Page<Order>  findByOrderByOrderId(String keyWord,Pageable pageable);
+    Page<Order>  findByOrderById(String keyWord,Pageable pageable);
 }

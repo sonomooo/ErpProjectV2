@@ -1,7 +1,9 @@
 package realERPproject.erpProjectVVS.stock.mapper;
 
+import org.springframework.stereotype.Component;
 import realERPproject.erpProjectVVS.stock.entity.Stock;
 
+@Component
 public class StockMapper {
 
     public Stock toEntity(StockRequest stockRequest){
