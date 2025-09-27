@@ -12,8 +12,6 @@ import realERPproject.erpProjectVVS.product.exception.ProductException;
 import realERPproject.erpProjectVVS.product.mapper.ProductMapper;
 import realERPproject.erpProjectVVS.product.repository.ProductRepositoryImpl;
 
-import java.awt.print.Pageable;
-
 @Service
 @RequiredArgsConstructor
 public class ProductService {

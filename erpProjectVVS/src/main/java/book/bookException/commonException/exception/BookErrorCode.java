@@ -1,4 +1,4 @@
-package realERPproject.erpProjectVVS.common.exception;
+package book.bookException.commonException.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -6,9 +6,9 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @RequiredArgsConstructor
-public enum ProductErrorCode implements ErrorCode{
+public enum BookErrorCode implements ErrorCode {
 
-    PRODUCT_NOT_FOUND("PRODUCT-001",HttpStatus.NOT_FOUND,"도서를 찾을 수 없습니다.");
+    BOOK_NOT_FOUND("BOOK-001",HttpStatus.NOT_FOUND,"제품을 찾을 수 없습니다.");
 
     private final String code;
     private final HttpStatus httpStatus;
